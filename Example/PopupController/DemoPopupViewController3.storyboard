@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Demo Popup View Controller3-->
+        <scene sceneID="QaB-ds-gU0">
+            <objects>
+                <viewController storyboardIdentifier="DemoPopupViewController3" id="S1V-Ka-qXC" customClass="DemoPopupViewController3" customModule="PopupController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H0D-BZ-tTS"/>
+                        <viewControllerLayoutGuide type="bottom" id="PJs-cC-JHB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vhz-os-Pfj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ft6-Tw-Hvi">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="S1V-Ka-qXC" id="ZME-GE-38K"/>
+                                </connections>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yz-NW-a2t">
+                                <rect key="frame" x="540" y="40" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="O0I-Lm-Kbx"/>
+                                    <constraint firstAttribute="width" constant="44" id="ixI-lf-1K9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="24"/>
+                                <state key="normal" title="☓">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapCloseButton:" destination="S1V-Ka-qXC" eventType="touchUpInside" id="9AM-IH-W4A"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="XUp-GH-X0i">
+                                <rect key="frame" x="280" y="555" width="39" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ft6-Tw-Hvi" firstAttribute="top" secondItem="Vhz-os-Pfj" secondAttribute="top" id="4VB-t5-cQc"/>
+                            <constraint firstAttribute="trailing" secondItem="ft6-Tw-Hvi" secondAttribute="trailing" id="A14-gD-Qjx"/>
+                            <constraint firstItem="7Yz-NW-a2t" firstAttribute="top" secondItem="H0D-BZ-tTS" secondAttribute="bottom" constant="20" id="JfX-4N-Cxq"/>
+                            <constraint firstAttribute="bottom" secondItem="ft6-Tw-Hvi" secondAttribute="bottom" id="ZA4-ri-1aH"/>
+                            <constraint firstItem="PJs-cC-JHB" firstAttribute="top" secondItem="XUp-GH-X0i" secondAttribute="bottom" constant="8" id="ZAA-aW-klD"/>
+                            <constraint firstItem="ft6-Tw-Hvi" firstAttribute="leading" secondItem="Vhz-os-Pfj" secondAttribute="leading" id="ehl-UH-sOW"/>
+                            <constraint firstItem="XUp-GH-X0i" firstAttribute="centerX" secondItem="Vhz-os-Pfj" secondAttribute="centerX" id="yUa-41-mLg"/>
+                            <constraint firstAttribute="trailing" secondItem="7Yz-NW-a2t" secondAttribute="trailing" constant="16" id="yuj-3J-T47"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="XUp-GH-X0i" id="MXU-lz-YhS"/>
+                        <outlet property="scrollView" destination="ft6-Tw-Hvi" id="jil-kl-q81"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZB-Rn-ECJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="505" y="539"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Qcy-3h-5hm">
+            <objects>
+                <viewController storyboardIdentifier="DemoPopupContainer2" id="9z8-QA-6WP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3xj-qc-gkl"/>
+                        <viewControllerLayoutGuide type="bottom" id="32r-lj-DG3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ncl-lS-sgh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just add on the PopupController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byW-V2-aYG">
+                                <rect key="frame" x="114.5" y="170" width="371" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PopupController has some kind of the options. like, layouts, animations, backgroundStyle...and so on." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pax-hQ-vWt">
+                                <rect key="frame" x="32" y="259" width="536" height="45.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.34509803921568627" green="0.74509803921568629" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pax-hQ-vWt" firstAttribute="top" secondItem="byW-V2-aYG" secondAttribute="bottom" constant="60" id="QDL-zP-Ahz"/>
+                            <constraint firstItem="byW-V2-aYG" firstAttribute="centerX" secondItem="Ncl-lS-sgh" secondAttribute="centerX" id="S95-77-IWT"/>
+                            <constraint firstItem="byW-V2-aYG" firstAttribute="top" secondItem="3xj-qc-gkl" secondAttribute="bottom" constant="150" id="e5e-lM-Er1"/>
+                            <constraint firstItem="Pax-hQ-vWt" firstAttribute="centerX" secondItem="Ncl-lS-sgh" secondAttribute="centerX" id="gNU-tR-0d8"/>
+                            <constraint firstItem="Pax-hQ-vWt" firstAttribute="leading" secondItem="Ncl-lS-sgh" secondAttribute="leading" constant="32" id="gkF-Js-n5t"/>
+                            <constraint firstItem="Pax-hQ-vWt" firstAttribute="top" secondItem="byW-V2-aYG" secondAttribute="bottom" constant="60" id="n2b-qZ-uqI"/>
+                            <constraint firstAttribute="trailing" secondItem="Pax-hQ-vWt" secondAttribute="trailing" constant="32" id="zEZ-a4-hec"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2EN-zf-XcV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="1250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PeK-cX-Ukv">
+            <objects>
+                <viewController storyboardIdentifier="DemoPopupContainer3" id="ft7-Zq-pTI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iH3-gF-xIq"/>
+                        <viewControllerLayoutGuide type="bottom" id="fr9-CJ-NHB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kao-rS-I1b">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Waiting for your PR." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAs-CD-1W1">
+                                <rect key="frame" x="187.5" y="170" width="225.5" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome your PR and the issues for the PopupController!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9l-3E-eBD">
+                                <rect key="frame" x="32" y="259" width="536" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98431372549019602" green="0.6588235294117647" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="E9l-3E-eBD" firstAttribute="centerX" secondItem="Kao-rS-I1b" secondAttribute="centerX" id="1LM-Em-154"/>
+                            <constraint firstItem="E9l-3E-eBD" firstAttribute="top" secondItem="WAs-CD-1W1" secondAttribute="bottom" constant="60" id="Byh-6W-3Ea"/>
+                            <constraint firstItem="WAs-CD-1W1" firstAttribute="top" secondItem="iH3-gF-xIq" secondAttribute="bottom" constant="150" id="Ljg-lr-zeX"/>
+                            <constraint firstItem="WAs-CD-1W1" firstAttribute="centerX" secondItem="Kao-rS-I1b" secondAttribute="centerX" id="m89-cF-y4h"/>
+                            <constraint firstItem="E9l-3E-eBD" firstAttribute="top" secondItem="WAs-CD-1W1" secondAttribute="bottom" constant="60" id="v8H-Nq-oeJ"/>
+                            <constraint firstAttribute="trailing" secondItem="E9l-3E-eBD" secondAttribute="trailing" constant="32" id="vfS-ky-9sd"/>
+                            <constraint firstItem="E9l-3E-eBD" firstAttribute="leading" secondItem="Kao-rS-I1b" secondAttribute="leading" constant="32" id="wKV-Oh-31O"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oUU-nZ-fA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1211" y="1250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Sau-6F-oUT">
+            <objects>
+                <viewController storyboardIdentifier="DemoPopupContainer1" id="QJV-5m-8pN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G8R-iQ-C9V"/>
+                        <viewControllerLayoutGuide type="bottom" id="j9M-bC-A3e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Iix-bc-3vu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walkthrough Pages." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4h-xN-xsF">
+                                <rect key="frame" x="185" y="170" width="230" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PopupController can be anything." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCC-kf-Y0z">
+                                <rect key="frame" x="147.5" y="259" width="305" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25098039215686274" green="0.66666666666666663" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eCC-kf-Y0z" firstAttribute="top" secondItem="Y4h-xN-xsF" secondAttribute="bottom" constant="60" id="Gpc-St-Zw1"/>
+                            <constraint firstItem="Y4h-xN-xsF" firstAttribute="centerX" secondItem="Iix-bc-3vu" secondAttribute="centerX" id="vf4-Hu-euc"/>
+                            <constraint firstItem="eCC-kf-Y0z" firstAttribute="centerX" secondItem="Iix-bc-3vu" secondAttribute="centerX" id="wJQ-d8-LsS"/>
+                            <constraint firstItem="Y4h-xN-xsF" firstAttribute="top" secondItem="G8R-iQ-C9V" secondAttribute="bottom" constant="150" id="wmb-Cq-7Uf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tmg-tZ-9n1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-207" y="1250"/>
+        </scene>
+    </scenes>
+</document>

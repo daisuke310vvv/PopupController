@@ -14,6 +14,15 @@
 		9D468A0F1C63601D00AF56C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D468A0D1C63601D00AF56C7 /* LaunchScreen.storyboard */; };
 		9D468A1A1C63601D00AF56C7 /* PopupControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A191C63601D00AF56C7 /* PopupControllerTests.swift */; };
 		9D468A251C63601D00AF56C7 /* PopupControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A241C63601D00AF56C7 /* PopupControllerUITests.swift */; };
+		9D468A351C63667900AF56C7 /* DemoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A341C63667900AF56C7 /* DemoPopupViewController.swift */; };
+		9D468A371C63772800AF56C7 /* DemoPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D468A361C63772800AF56C7 /* DemoPopupViewController.storyboard */; };
+		9D468A391C63857900AF56C7 /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A381C63857900AF56C7 /* PopupController.swift */; };
+		9D468A3C1C63871B00AF56C7 /* DemoPopupViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A3B1C63871B00AF56C7 /* DemoPopupViewController1.swift */; };
+		9D468A3E1C63873100AF56C7 /* DemoPopupViewController1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D468A3D1C63873100AF56C7 /* DemoPopupViewController1.storyboard */; };
+		9D468A401C638D7D00AF56C7 /* DemoPopupViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A3F1C638D7D00AF56C7 /* DemoPopupViewController2.swift */; };
+		9D468A421C638D8B00AF56C7 /* DemoPopupViewController2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D468A411C638D8B00AF56C7 /* DemoPopupViewController2.storyboard */; };
+		9D61E9101C69CC6200E74610 /* DemoPopupViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D61E90F1C69CC6200E74610 /* DemoPopupViewController3.swift */; };
+		9D61E9121C69CC7300E74610 /* DemoPopupViewController3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D61E9111C69CC7300E74610 /* DemoPopupViewController3.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +56,15 @@
 		9D468A201C63601D00AF56C7 /* PopupControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopupControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D468A241C63601D00AF56C7 /* PopupControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupControllerUITests.swift; sourceTree = "<group>"; };
 		9D468A261C63601D00AF56C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D468A341C63667900AF56C7 /* DemoPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPopupViewController.swift; sourceTree = "<group>"; };
+		9D468A361C63772800AF56C7 /* DemoPopupViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DemoPopupViewController.storyboard; sourceTree = "<group>"; };
+		9D468A381C63857900AF56C7 /* PopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopupController.swift; path = ../../Classes/PopupController.swift; sourceTree = "<group>"; };
+		9D468A3B1C63871B00AF56C7 /* DemoPopupViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPopupViewController1.swift; sourceTree = "<group>"; };
+		9D468A3D1C63873100AF56C7 /* DemoPopupViewController1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DemoPopupViewController1.storyboard; sourceTree = "<group>"; };
+		9D468A3F1C638D7D00AF56C7 /* DemoPopupViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPopupViewController2.swift; sourceTree = "<group>"; };
+		9D468A411C638D8B00AF56C7 /* DemoPopupViewController2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DemoPopupViewController2.storyboard; sourceTree = "<group>"; };
+		9D61E90F1C69CC6200E74610 /* DemoPopupViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPopupViewController3.swift; sourceTree = "<group>"; };
+		9D61E9111C69CC7300E74610 /* DemoPopupViewController3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DemoPopupViewController3.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +115,12 @@
 		9D468A031C63601D00AF56C7 /* PopupController */ = {
 			isa = PBXGroup;
 			children = (
+				9D468A3A1C6386E900AF56C7 /* DemoViewControllers */,
+				9D468A381C63857900AF56C7 /* PopupController.swift */,
 				9D468A041C63601D00AF56C7 /* AppDelegate.swift */,
 				9D468A061C63601D00AF56C7 /* ViewController.swift */,
+				9D468A341C63667900AF56C7 /* DemoPopupViewController.swift */,
+				9D468A361C63772800AF56C7 /* DemoPopupViewController.storyboard */,
 				9D468A081C63601D00AF56C7 /* Main.storyboard */,
 				9D468A0B1C63601D00AF56C7 /* Assets.xcassets */,
 				9D468A0D1C63601D00AF56C7 /* LaunchScreen.storyboard */,
@@ -123,6 +145,19 @@
 				9D468A261C63601D00AF56C7 /* Info.plist */,
 			);
 			path = PopupControllerUITests;
+			sourceTree = "<group>";
+		};
+		9D468A3A1C6386E900AF56C7 /* DemoViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9D468A3B1C63871B00AF56C7 /* DemoPopupViewController1.swift */,
+				9D468A3D1C63873100AF56C7 /* DemoPopupViewController1.storyboard */,
+				9D468A3F1C638D7D00AF56C7 /* DemoPopupViewController2.swift */,
+				9D468A411C638D8B00AF56C7 /* DemoPopupViewController2.storyboard */,
+				9D61E90F1C69CC6200E74610 /* DemoPopupViewController3.swift */,
+				9D61E9111C69CC7300E74610 /* DemoPopupViewController3.storyboard */,
+			);
+			name = DemoViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +265,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D468A0F1C63601D00AF56C7 /* LaunchScreen.storyboard in Resources */,
+				9D468A3E1C63873100AF56C7 /* DemoPopupViewController1.storyboard in Resources */,
+				9D61E9121C69CC7300E74610 /* DemoPopupViewController3.storyboard in Resources */,
+				9D468A371C63772800AF56C7 /* DemoPopupViewController.storyboard in Resources */,
 				9D468A0C1C63601D00AF56C7 /* Assets.xcassets in Resources */,
+				9D468A421C638D8B00AF56C7 /* DemoPopupViewController2.storyboard in Resources */,
 				9D468A0A1C63601D00AF56C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,7 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D61E9101C69CC6200E74610 /* DemoPopupViewController3.swift in Sources */,
+				9D468A391C63857900AF56C7 /* PopupController.swift in Sources */,
+				9D468A401C638D7D00AF56C7 /* DemoPopupViewController2.swift in Sources */,
+				9D468A351C63667900AF56C7 /* DemoPopupViewController.swift in Sources */,
 				9D468A071C63601D00AF56C7 /* ViewController.swift in Sources */,
+				9D468A3C1C63871B00AF56C7 /* DemoPopupViewController1.swift in Sources */,
 				9D468A051C63601D00AF56C7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +528,7 @@
 				9D468A2B1C63601D00AF56C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D468A2C1C63601D00AF56C7 /* Build configuration list for PBXNativeTarget "PopupControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +537,7 @@
 				9D468A2E1C63601D00AF56C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D468A2F1C63601D00AF56C7 /* Build configuration list for PBXNativeTarget "PopupControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +546,7 @@
 				9D468A311C63601D00AF56C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
