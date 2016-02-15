@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name         = "PopupController"
   s.version      = "0.0.1"
   s.summary      = "PopupController is a controller for showing temporary popup view."
-  s.homepage     = "https://github.com/daisuke310vvv"
+  s.homepage     = "https://github.com/daisuke310vvv/PopupController"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author             = { "Daisuke Sato" => "daisuke.sato1991@gmail.com" }
