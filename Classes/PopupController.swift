@@ -14,7 +14,7 @@ typealias PopupAnimateCompletion =  () -> ()
 /** PopupContentViewController:
     Every ViewController which is added on the PopupController must need to be conformed this protocol.
  */
-protocol PopupContentViewController {
+public protocol PopupContentViewController {
     
     /** sizeForPopup(popupController: size: showingKeyboard:):
         return view's size
