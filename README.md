@@ -1,5 +1,9 @@
 # PopupController
 *PopupController* is a controller for showing temporary popup view.
+[![CI Status](http://img.shields.io/travis/daisuke310vvv/PopupController.svg?style=flat)](https://travis-ci.org/daisuke310vvv/PopupController)
+[![Version](https://img.shields.io/cocoapods/v/PopupController.svg?style=flat)](http://cocoapods.org/pods/PopupController)
+[![License](https://img.shields.io/cocoapods/l/PopupController.svg?style=flat)](http://cocoapods.org/pods/PopupController)
+[![Platform](https://img.shields.io/cocoapods/p/PopupController.svg?style=flat)](http://cocoapods.org/pods/PopupController)
 
 <p align="center">
 <img src="https://github.com/daisuke310vvv/PopupController/blob/master/screenshots/ss01.jpg" width="250px" />
