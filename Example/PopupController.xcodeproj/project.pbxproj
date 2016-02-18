@@ -13,7 +13,6 @@
 		9D468A0C1C63601D00AF56C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D468A0B1C63601D00AF56C7 /* Assets.xcassets */; };
 		9D468A0F1C63601D00AF56C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D468A0D1C63601D00AF56C7 /* LaunchScreen.storyboard */; };
 		9D468A1A1C63601D00AF56C7 /* PopupControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A191C63601D00AF56C7 /* PopupControllerTests.swift */; };
-		9D468A251C63601D00AF56C7 /* PopupControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A241C63601D00AF56C7 /* PopupControllerUITests.swift */; };
 		9D468A351C63667900AF56C7 /* DemoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A341C63667900AF56C7 /* DemoPopupViewController.swift */; };
 		9D468A371C63772800AF56C7 /* DemoPopupViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D468A361C63772800AF56C7 /* DemoPopupViewController.storyboard */; };
 		9D468A391C63857900AF56C7 /* PopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A381C63857900AF56C7 /* PopupController.swift */; };
@@ -54,8 +53,6 @@
 		9D468A191C63601D00AF56C7 /* PopupControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupControllerTests.swift; sourceTree = "<group>"; };
 		9D468A1B1C63601D00AF56C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D468A201C63601D00AF56C7 /* PopupControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopupControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D468A241C63601D00AF56C7 /* PopupControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupControllerUITests.swift; sourceTree = "<group>"; };
-		9D468A261C63601D00AF56C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D468A341C63667900AF56C7 /* DemoPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPopupViewController.swift; sourceTree = "<group>"; };
 		9D468A361C63772800AF56C7 /* DemoPopupViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DemoPopupViewController.storyboard; sourceTree = "<group>"; };
 		9D468A381C63857900AF56C7 /* PopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopupController.swift; path = ../../Classes/PopupController.swift; sourceTree = "<group>"; };
@@ -97,7 +94,6 @@
 			children = (
 				9D468A031C63601D00AF56C7 /* PopupController */,
 				9D468A181C63601D00AF56C7 /* PopupControllerTests */,
-				9D468A231C63601D00AF56C7 /* PopupControllerUITests */,
 				9D468A021C63601D00AF56C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -136,15 +132,6 @@
 				9D468A1B1C63601D00AF56C7 /* Info.plist */,
 			);
 			path = PopupControllerTests;
-			sourceTree = "<group>";
-		};
-		9D468A231C63601D00AF56C7 /* PopupControllerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				9D468A241C63601D00AF56C7 /* PopupControllerUITests.swift */,
-				9D468A261C63601D00AF56C7 /* Info.plist */,
-			);
-			path = PopupControllerUITests;
 			sourceTree = "<group>";
 		};
 		9D468A3A1C6386E900AF56C7 /* DemoViewControllers */ = {
@@ -317,7 +304,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D468A251C63601D00AF56C7 /* PopupControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
