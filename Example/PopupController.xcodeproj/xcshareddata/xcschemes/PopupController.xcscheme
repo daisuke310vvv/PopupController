@@ -38,16 +38,6 @@
                ReferencedContainer = "container:PopupController.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9D468A1F1C63601D00AF56C7"
-               BuildableName = "PopupControllerUITests.xctest"
-               BlueprintName = "PopupControllerUITests"
-               ReferencedContainer = "container:PopupController.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
