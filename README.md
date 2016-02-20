@@ -29,13 +29,19 @@ Future
 
 ## Usage
 
-Before use, Every ViewController which is added on the PopupController must conform to *PopupContentViewController* protocol.  
+Before use,  
+Every ViewController which is added on the PopupController must conform to *PopupContentViewController* protocol.  
 
 ```swift
 class AnyPopupViewController: UIViewController, PopupContentViewController {
 
+	// Do something...
+
+	priavte var popupSize: CGSize // define the size for showing popup view size.
+
+	// PopupContentViewController Protocol
     func sizeForPopup(popupController: PopupController, size: CGSize, showingKeyboard: Bool) -> CGSize {
-	    return CGSizeMake(300, 400) // size for a view
+	    return popupSize
 	}
 }
 ```
@@ -46,7 +52,9 @@ Then, show popup
 let anyPopupViewController = AnyPopupViewController()
 let popupController = PopupController.create(self)
 popupController.presentPoopupController(anyPopupViewController,  completion: nil)
-```
+```  
+  
+With some custom.  
   
 ```swift
 let popupController = PopupController.create(self)
@@ -54,6 +62,16 @@ popupController.animation = .FadeIn
 popupController.layout = .Top
 popupController.backgroundStyle = .Blur(style: .Light)
 popupController.presentPoopupController(childViewController,  completion: nil)
+```  
+  
+## Customization  
+  
+```swift
+public var layout: PopupLayout						// default is .Center,  [.Top/.Center/.Bottom]
+public var animation: PopupAnimation				// default is .SlideUp,  [.Slideup/.FadeIn]
+public var backgroundStyle: PopupBackgroundStyle	// default is .BlackFilter(alpha: 0.4) [BlackFilter(alpha: CGFloat)/Blur]
+public var scrollable: Bool							// default is true
+public var movesAlongWithKeyboard: Bool				// default is true
 ```
 
 ## License
