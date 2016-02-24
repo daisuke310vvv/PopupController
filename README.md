@@ -71,6 +71,7 @@ public var layout: PopupLayout						// default is .Center,  [.Top/.Center/.Botto
 public var animation: PopupAnimation				// default is .SlideUp,  [.Slideup/.FadeIn]
 public var backgroundStyle: PopupBackgroundStyle	// default is .BlackFilter(alpha: 0.4) [BlackFilter(alpha: CGFloat)/Blur]
 public var scrollable: Bool							// default is true
+public var tappable: Bool							// default is true
 public var movesAlongWithKeyboard: Bool				// default is true
 ```
 

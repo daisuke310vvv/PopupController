@@ -56,6 +56,7 @@ public class PopupController: UIViewController {
     // MARK: - Public variables
     public var popupView: UIView!
     public var scrollable: Bool = true
+    public var tappable: Bool = true
     public var layout: PopupLayout = .Center
     public var animation: PopupAnimation = .SlideUp
     public var movesAlongWithKeyboard: Bool = true
@@ -200,6 +201,7 @@ private extension PopupController {
     }
     
     func registerTapGesture() {
+        guard tappable else { return }
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("didTapGesture:"))
         gestureRecognizer.delegate = self
         baseScrollView.addGestureRecognizer(gestureRecognizer)
