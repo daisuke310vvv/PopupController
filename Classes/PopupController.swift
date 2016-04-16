@@ -161,14 +161,7 @@ private extension PopupController {
         }
         baseScrollView.frame = view.frame
         
-        switch self.backgroundStyle {
-        case .BlackFilter(let alpha):
-            baseScrollView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(alpha)
-        case .Blur(let style):
-            let effectView = UIVisualEffectView(effect: UIBlurEffect(style: style))
-            effectView.frame = view.frame
-            view.addSubview(effectView)
-        }
+        updateBackgroundStyle(self.backgroundStyle)
         
         view.addSubview(baseScrollView)
         
@@ -216,6 +209,18 @@ private extension PopupController {
         baseScrollView.frame = view.frame
         baseScrollView.contentInset.top = layout.origin(popupView).y
         defaultContentOffset.y = -baseScrollView.contentInset.top
+    }
+    
+    func updateBackgroundStyle(style: PopupBackgroundStyle) {
+        switch style {
+        case .BlackFilter(let alpha):
+            baseScrollView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(alpha)
+        case .Blur(let style):
+            baseScrollView.backgroundColor = UIColor.clearColor()
+            let effectView = UIVisualEffectView(effect: UIBlurEffect(style: style))
+            effectView.frame = view.frame
+            view.insertSubview(effectView, atIndex: 0)
+        }
     }
     
     @objc func popupControllerWillShowKeyboard(notification: NSNotification) {
@@ -353,13 +358,14 @@ private extension PopupController {
     
     func slideUp(layout: PopupLayout, completion: () -> Void) {
         view.hidden = false
-        baseScrollView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.0)
+        baseScrollView.backgroundColor = UIColor.clearColor()
         baseScrollView.contentInset.top = layout.origin(popupView).y
         baseScrollView.contentOffset.y = -UIScreen.mainScreen().bounds.height
         
         UIView.animateWithDuration(
             0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: .CurveLinear, animations: { () -> Void in
-                self.baseScrollView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.4)
+                
+                self.updateBackgroundStyle(self.backgroundStyle)
                 self.baseScrollView.contentOffset.y = -layout.origin(self.popupView).y
                 self.defaultContentOffset = self.baseScrollView.contentOffset
             }, completion: { (isFinished) -> Void in
