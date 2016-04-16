@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     @IBAction func didTapButton(sender: AnyObject) {
@@ -31,7 +30,7 @@ class ViewController: UIViewController {
         let popup = PopupController.create(self)
         popup.animation = .SlideUp
         popup.scrollable = false
-        popup.backgroundStyle = .Blur(style: .Light)
+        popup.backgroundStyle = .BlackFilter(alpha: 0.6)
         
         let container = DemoPopupViewController2.instance()
         popup.presentPopupController(container, completion: nil)
