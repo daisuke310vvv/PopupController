@@ -37,7 +37,7 @@ class AnyPopupViewController: UIViewController, PopupContentViewController {
 
 	// Do something...
 
-	priavte var popupSize: CGSize // define the size for showing popup view size.
+	private var popupSize: CGSize // define the size for showing popup view size.
 
 	// PopupContentViewController Protocol
     func sizeForPopup(popupController: PopupController, size: CGSize, showingKeyboard: Bool) -> CGSize {
