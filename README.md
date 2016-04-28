@@ -61,7 +61,7 @@ let popupController = PopupController.create(self)
 popupController.animation = .FadeIn
 popupController.layout = .Top
 popupController.backgroundStyle = .Blur(style: .Light)
-popupController.presentPoopupController(childViewController,  completion: nil)
+popupController.presentPopupController(childViewController,  completion: nil)
 ```  
   
 ## Customization  
