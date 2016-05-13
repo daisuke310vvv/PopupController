@@ -16,38 +16,55 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapButton(sender: AnyObject) {
-        let popup = PopupController.create(self)
-        popup.delegate = self
-        popup.animation = .FadeIn
-        
-        let container = DemoPopupViewController1.instance()
-        container.closeHandler = { _ in
-            popup.closePopup(nil)
-        }
-        popup.presentPopupController(container, completion: nil)
+        PopupController
+            .create(self)
+            .show(DemoPopupViewController1.instance())
     }
-
+    
     @IBAction func didTapButton2(sender: AnyObject) {
-        let popup = PopupController.create(self)
-        popup.delegate = self
-        popup.animation = .SlideUp
-        popup.scrollable = false
-        popup.backgroundStyle = .BlackFilter(alpha: 0.6)
-        
-        let container = DemoPopupViewController2.instance()
-        popup.presentPopupController(container, completion: nil)
+        PopupController
+            .create(self)
+            .customize(
+                [
+                    .Animation(.SlideUp),
+                    .Scrollable(false),
+                    .BackgroundStyle(.BlackFilter(alpha: 0.7))
+                ]
+            )
+            .didShowHandler { popup in
+                print("showed popup!")
+            }
+            .didCloseHanlder { _ in
+                print("closed popup!")
+            }
+            .show(DemoPopupViewController2.instance())
     }
     
     @IBAction func didTapButton3(sender: AnyObject) {
-        let popup = PopupController.create(self)
-        popup.delegate = self
-        popup.animation = .FadeIn
+        let popup = PopupController
+            .create(self)
+            .customize(
+                [
+                    .Layout(.Center),
+                    .Animation(.FadeIn),
+                    .BackgroundStyle(.BlackFilter(alpha: 0.8)),
+                    .DismissWhenTaps(true),
+                    .Scrollable(true)
+                ]
+            )
+            .didShowHandler { popup in
+                print("showed popup!")
+            }
+            .didCloseHanlder { popup in
+                print("closed popup!")
+        }
         
         let container = DemoPopupViewController3.instance()
         container.closeHandler = { _ in
-            popup.closePopup(nil)
+            popup.dismiss()
         }
-        popup.presentPopupController(container, completion: nil)
+        
+        popup.show(container)
     }
 }
 
