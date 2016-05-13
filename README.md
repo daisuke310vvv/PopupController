@@ -49,30 +49,78 @@ class AnyPopupViewController: UIViewController, PopupContentViewController {
 Then, show popup  
 
 ```swift
-let anyPopupViewController = AnyPopupViewController()
-let popupController = PopupController.create(self)
-popupController.presentPoopupController(anyPopupViewController,  completion: nil)
+PopupController
+    .create(self)
+    .show(AnyPopupViewController())
 ```  
   
 With some custom.  
   
 ```swift
-let popupController = PopupController.create(self)
-popupController.animation = .FadeIn
-popupController.layout = .Top
-popupController.backgroundStyle = .Blur(style: .Light)
-popupController.presentPopupController(childViewController,  completion: nil)
+PopupController
+    .create(self)
+    .custom(
+        [
+            .Animation(.FadeIn), 
+            .Layout(.Top), 
+            .BackgroundStyle(.BlackFilter(alpha: 0.7))
+        ]
+    )
+    .show(AnyPopupViewController())
+```  
+
+With Handler  
+
+```swift
+PopupController
+    .create(self)
+    .custom(
+        [
+            .Scrollable(false), 
+            .DismissWhenTaps(true)
+        ]
+    )
+    .didShowHandler { popup in
+        // Do something
+    }
+    .didCloseHandler { _ in
+        // Do something
+    }
+    .show(AnyPopupViewController())
+```  
+
+If you use PopupController instance, do like this below  
+
+```swift
+let popup = PopupController
+    .create(self)
+    .custom(
+        [
+            .Animation(.SlideUp)
+        ]
+    )
+    .didShowHandler { popup in
+        // Do something
+    }
+    .didCloseHandler { _ in
+       // Do something
+    }
+
+popup.show() // show popup
+popup.dismiss() // dismiss popup
 ```  
   
 ## Customization  
   
 ```swift
-public var layout: PopupLayout						// default is .Center,  [.Top/.Center/.Bottom]
-public var animation: PopupAnimation				// default is .SlideUp,  [.Slideup/.FadeIn]
-public var backgroundStyle: PopupBackgroundStyle	// default is .BlackFilter(alpha: 0.4) [BlackFilter(alpha: CGFloat)/Blur]
-public var scrollable: Bool							// default is true
-public var tappable: Bool							// default is true
-public var movesAlongWithKeyboard: Bool				// default is true
+public enum PopupCustomOption {
+    case Layout(PopupController.PopupLayout)
+    case Animation(PopupController.PopupAnimation)
+    case BackgroundStyle(PopupController.PopupBackgroundStyle)
+    case Scrollable(Bool)
+    case DismissWhenTaps(Bool)
+    case MovesAlongWithKeyboard(Bool)
+}
 ```
 
 ## License
