@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		596A2AC81CCBF3DB00627E0B /* ViewController+PopupControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596A2AC71CCBF3DB00627E0B /* ViewController+PopupControllerDelegate.swift */; };
 		9D468A051C63601D00AF56C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A041C63601D00AF56C7 /* AppDelegate.swift */; };
 		9D468A071C63601D00AF56C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A061C63601D00AF56C7 /* ViewController.swift */; };
 		9D468A0A1C63601D00AF56C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D468A081C63601D00AF56C7 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		596A2AC71CCBF3DB00627E0B /* ViewController+PopupControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+PopupControllerDelegate.swift"; sourceTree = "<group>"; };
 		9D468A011C63601D00AF56C7 /* PopupController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopupController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D468A041C63601D00AF56C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D468A061C63601D00AF56C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				9D468A381C63857900AF56C7 /* PopupController.swift */,
 				9D468A041C63601D00AF56C7 /* AppDelegate.swift */,
 				9D468A061C63601D00AF56C7 /* ViewController.swift */,
+				596A2AC71CCBF3DB00627E0B /* ViewController+PopupControllerDelegate.swift */,
 				9D468A341C63667900AF56C7 /* DemoPopupViewController.swift */,
 				9D468A361C63772800AF56C7 /* DemoPopupViewController.storyboard */,
 				9D468A081C63601D00AF56C7 /* Main.storyboard */,
@@ -240,6 +243,7 @@
 				9D468A391C63857900AF56C7 /* PopupController.swift in Sources */,
 				9D468A401C638D7D00AF56C7 /* DemoPopupViewController2.swift in Sources */,
 				9D468A351C63667900AF56C7 /* DemoPopupViewController.swift in Sources */,
+				596A2AC81CCBF3DB00627E0B /* ViewController+PopupControllerDelegate.swift in Sources */,
 				9D468A071C63601D00AF56C7 /* ViewController.swift in Sources */,
 				9D468A3C1C63871B00AF56C7 /* DemoPopupViewController1.swift in Sources */,
 				9D468A051C63601D00AF56C7 /* AppDelegate.swift in Sources */,

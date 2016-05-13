@@ -25,7 +25,7 @@ public protocol PopupContentViewController {
 /** PopupControllerDelegate:
     This delegate perfoms when PopupController is showed and closed.
  */
-@objc protocol PopupControllerDelegate {
+@objc public protocol PopupControllerDelegate {
     optional func popupControllerDidClose() -> Void
     optional func popupControllerDidShow() -> Void
 }
@@ -62,7 +62,7 @@ public class PopupController: UIViewController {
     public var movesAlongWithKeyboard: Bool = true
     public var backgroundStyle: PopupBackgroundStyle = .BlackFilter(alpha: 0.4)
     
-    weak var delegate: PopupControllerDelegate?
+    weak public var delegate: PopupControllerDelegate?
     
     // MARK: - Private variables
     private let margin: CGFloat = 16

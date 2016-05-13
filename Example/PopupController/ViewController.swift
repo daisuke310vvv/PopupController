@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     @IBAction func didTapButton(sender: AnyObject) {
         let popup = PopupController.create(self)
+        popup.delegate = self
         popup.animation = .FadeIn
         
         let container = DemoPopupViewController1.instance()
@@ -28,6 +29,7 @@ class ViewController: UIViewController {
 
     @IBAction func didTapButton2(sender: AnyObject) {
         let popup = PopupController.create(self)
+        popup.delegate = self
         popup.animation = .SlideUp
         popup.scrollable = false
         popup.backgroundStyle = .BlackFilter(alpha: 0.6)
@@ -38,6 +40,7 @@ class ViewController: UIViewController {
     
     @IBAction func didTapButton3(sender: AnyObject) {
         let popup = PopupController.create(self)
+        popup.delegate = self
         popup.animation = .FadeIn
         
         let container = DemoPopupViewController3.instance()
