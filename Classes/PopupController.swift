@@ -56,30 +56,30 @@ public class PopupController: UIViewController {
     // MARK: - Public variables
     public var popupView: UIView!
     
-    public var movesAlongWithKeyboard: Bool = true
-    public var scrollable: Bool = true {
+    // MARK: - Private variables
+    private var movesAlongWithKeyboard: Bool = true
+    private var scrollable: Bool = true {
         didSet {
             updateScrollable()
         }
     }
-    public var dismissWhenTaps: Bool = true {
+    private var dismissWhenTaps: Bool = true {
         didSet {
             if dismissWhenTaps {
                 registerTapGesture()
             }
         }
     }
-    public var backgroundStyle: PopupBackgroundStyle = .BlackFilter(alpha: 0.4) {
+    private var backgroundStyle: PopupBackgroundStyle = .BlackFilter(alpha: 0.4) {
         didSet {
             updateBackgroundStyle(backgroundStyle)
         }
     }
-    public var layout: PopupLayout = .Center
-    public var animation: PopupAnimation = .FadeIn
+    private var layout: PopupLayout = .Center
+    private var animation: PopupAnimation = .FadeIn
     
-    // MARK: - Private variables
     private let margin: CGFloat = 16
-    private var baseScrollView = UIScrollView()
+    private let baseScrollView = UIScrollView()
     private var isShowingKeyboard: Bool = false
     private var defaultContentOffset = CGPoint.zero
     private var closedHandler: ((PopupController) -> Void)?
@@ -117,7 +117,7 @@ public class PopupController: UIViewController {
     
 }
 
-// MARK: - Public
+// MARK: - Publics
 public extension PopupController {
     
     // MARK: Classes
