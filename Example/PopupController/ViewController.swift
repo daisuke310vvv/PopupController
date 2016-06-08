@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             .didShowHandler { popup in
                 print("showed popup!")
             }
-            .didCloseHanlder { _ in
+            .didCloseHandler { _ in
                 print("closed popup!")
             }
             .show(DemoPopupViewController2.instance())
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
             .didShowHandler { popup in
                 print("showed popup!")
             }
-            .didCloseHanlder { popup in
+            .didCloseHandler { popup in
                 print("closed popup!")
         }
         
