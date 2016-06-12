@@ -59,7 +59,7 @@ With some custom.
 ```swift
 PopupController
     .create(self)
-    .custom(
+    .customize(
         [
             .Animation(.FadeIn), 
             .Layout(.Top), 
@@ -74,7 +74,7 @@ With Handler
 ```swift
 PopupController
     .create(self)
-    .custom(
+    .customize(
         [
             .Scrollable(false), 
             .DismissWhenTaps(true)
@@ -94,7 +94,7 @@ If you use PopupController instance, do like this below
 ```swift
 let popup = PopupController
     .create(self)
-    .custom(
+    .customize(
         [
             .Animation(.SlideUp)
         ]
