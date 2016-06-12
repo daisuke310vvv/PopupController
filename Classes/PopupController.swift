@@ -157,7 +157,7 @@ public extension PopupController {
         return self
     }
     
-    public func didCloseHanlder(handler: (PopupController) -> Void) -> PopupController {
+    public func didCloseHandler(handler: (PopupController) -> Void) -> PopupController {
         self.closedHandler = handler
         return self
     }
