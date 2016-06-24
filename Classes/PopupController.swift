@@ -226,22 +226,16 @@ private extension PopupController {
     }
     
     func registerTapGesture() {
-        gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PopupController.didTapGesture(_:)))
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PopupController.didTapGesture(_:)))
         
-        guard let _gestureRecognizer = gestureRecognizer else {
-            return
-        }
-        
-        _gestureRecognizer.delegate = self
-        baseScrollView.addGestureRecognizer(_gestureRecognizer)
+        gestureRecognizer.delegate = self
+        baseScrollView.addGestureRecognizer(gestureRecognizer)
     }
     
     func unregisterTapGesture() {
-        guard let _gestureRecognizer = gestureRecognizer else {
-            return
+        for recognizer in baseScrollView.gestureRecognizers ?? [] {
+            baseScrollView.removeGestureRecognizer(recognizer)
         }
-        
-        baseScrollView.removeGestureRecognizer(_gestureRecognizer)
     }
     
     func updateLayouts() {
