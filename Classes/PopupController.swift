@@ -67,8 +67,7 @@ public class PopupController: UIViewController {
         didSet {
             if dismissWhenTaps {
                 registerTapGesture()
-            }
-            else {
+            } else {
                 unregisterTapGesture()
             }
         }
@@ -255,10 +254,10 @@ private extension PopupController {
     }
     
     func updateScrollable() {
+        baseScrollView.scrollEnabled = scrollable
+        baseScrollView.alwaysBounceVertical = scrollable
+        
         if scrollable {
-            baseScrollView.scrollEnabled = scrollable
-            baseScrollView.alwaysBounceHorizontal = false
-            baseScrollView.alwaysBounceVertical = true
             baseScrollView.delegate = self
         }
     }
