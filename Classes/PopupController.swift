@@ -68,6 +68,9 @@ public class PopupController: UIViewController {
             if dismissWhenTaps {
                 registerTapGesture()
             }
+            else {
+                unregisterTapGesture()
+            }
         }
     }
     private var backgroundStyle: PopupBackgroundStyle = .BlackFilter(alpha: 0.4) {
@@ -224,8 +227,15 @@ private extension PopupController {
     
     func registerTapGesture() {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PopupController.didTapGesture(_:)))
+        
         gestureRecognizer.delegate = self
         baseScrollView.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    func unregisterTapGesture() {
+        for recognizer in baseScrollView.gestureRecognizers ?? [] {
+            baseScrollView.removeGestureRecognizer(recognizer)
+        }
     }
     
     func updateLayouts() {
