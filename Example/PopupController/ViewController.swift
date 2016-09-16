@@ -12,23 +12,23 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
     }
     
-    @IBAction func didTapButton(sender: AnyObject) {
+    @IBAction func didTapButton(_ sender: AnyObject) {
         PopupController
             .create(self)
             .show(DemoPopupViewController1.instance())
     }
     
-    @IBAction func didTapButton2(sender: AnyObject) {
+    @IBAction func didTapButton2(_ sender: AnyObject) {
         PopupController
             .create(self)
             .customize(
                 [
-                    .Animation(.SlideUp),
-                    .Scrollable(false),
-                    .BackgroundStyle(.BlackFilter(alpha: 0.7))
+                    .animation(.slideUp),
+                    .scrollable(false),
+                    .backgroundStyle(.blackFilter(alpha: 0.7))
                 ]
             )
             .didShowHandler { popup in
@@ -40,16 +40,16 @@ class ViewController: UIViewController {
             .show(DemoPopupViewController2.instance())
     }
     
-    @IBAction func didTapButton3(sender: AnyObject) {
+    @IBAction func didTapButton3(_ sender: AnyObject) {
         let popup = PopupController
             .create(self)
             .customize(
                 [
-                    .Layout(.Center),
-                    .Animation(.FadeIn),
-                    .BackgroundStyle(.BlackFilter(alpha: 0.8)),
-                    .DismissWhenTaps(true),
-                    .Scrollable(true)
+                    .layout(.center),
+                    .animation(.fadeIn),
+                    .backgroundStyle(.blackFilter(alpha: 0.8)),
+                    .dismissWhenTaps(true),
+                    .scrollable(true)
                 ]
             )
             .didShowHandler { popup in

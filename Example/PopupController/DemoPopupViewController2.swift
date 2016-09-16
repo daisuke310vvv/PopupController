@@ -11,17 +11,17 @@ import UIKit
 class DemoPopupViewController2: UIViewController, PopupContentViewController, UITableViewDataSource {
     
     var fruits = [
-        ("Apple", UIColor.redColor()),
-        ("Banana", UIColor.yellowColor()),
-        ("Grape", UIColor.purpleColor()),
-        ("Orange", UIColor.orangeColor())
+        ("Apple", UIColor.red),
+        ("Banana", UIColor.yellow),
+        ("Grape", UIColor.purple),
+        ("Orange", UIColor.orange)
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.view.layer.cornerRadius = 4
     }
@@ -36,17 +36,17 @@ class DemoPopupViewController2: UIViewController, PopupContentViewController, UI
         // Dispose of any resources that can be recreated.
     }
     
-    func sizeForPopup(popupController: PopupController, size: CGSize, showingKeyboard: Bool) -> CGSize {
-        return CGSizeMake(300, 500)
+    func sizeForPopup(_ popupController: PopupController, size: CGSize, showingKeyboard: Bool) -> CGSize {
+        return CGSize(width: 300, height: 500)
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fruits.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! DemoPopup2Cell
-        let (text, color) = fruits[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! DemoPopup2Cell
+        let (text, color) = fruits[(indexPath as NSIndexPath).row]
         cell.colorView.backgroundColor = color
         cell.titleLabel.text = text
         

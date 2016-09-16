@@ -14,14 +14,14 @@ class DemoPopupViewController1: UIViewController, PopupContentViewController {
 
     @IBOutlet weak var button: UIButton! {
         didSet {
-            button.layer.borderColor = UIColor(red: 242/255, green: 105/255, blue: 100/255, alpha: 1.0).CGColor
+            button.layer.borderColor = UIColor(red: 242/255, green: 105/255, blue: 100/255, alpha: 1.0).cgColor
             button.layer.borderWidth = 1.5
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.frame.size = CGSizeMake(300,300)
+        self.view.frame.size = CGSize(width: 300,height: 300)
 
         // Do any additional setup after loading the view.
     }
@@ -36,11 +36,11 @@ class DemoPopupViewController1: UIViewController, PopupContentViewController {
         return storyboard.instantiateInitialViewController() as! DemoPopupViewController1
     }
     
-    func sizeForPopup(popupController: PopupController, size: CGSize, showingKeyboard: Bool) -> CGSize {
-        return CGSizeMake(300,300)
+    func sizeForPopup(_ popupController: PopupController, size: CGSize, showingKeyboard: Bool) -> CGSize {
+        return CGSize(width: 300,height: 300)
     }
     
-    @IBAction func didTapCloseButton(sender: AnyObject) {
+    @IBAction func didTapCloseButton(_ sender: AnyObject) {
         closeHandler?()
     }
 
