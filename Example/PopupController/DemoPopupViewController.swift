@@ -12,7 +12,7 @@ class DemoPopupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.blueColor()
+        self.view.backgroundColor = UIColor.blue
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +28,7 @@ class DemoPopupViewController: UIViewController {
 }
 
 extension DemoPopupViewController: PopupContentViewController {
-    func sizeForPopup(popupController: PopupController, size: CGSize, showingKeyboard: Bool) -> CGSize {
-        return CGSizeMake(300,400)
+    func sizeForPopup(_ popupController: PopupController, size: CGSize, showingKeyboard: Bool) -> CGSize {
+        return CGSize(width: 300,height: 400)
     }
 }
