@@ -266,8 +266,8 @@ private extension PopupController {
         isShowingKeyboard = true
         let obj = (notification as NSNotification).userInfo?[UIKeyboardFrameEndUserInfoKey] as! NSValue
         
-        if needsToMoveFrom(obj.CGRectValue.origin) {
-            move(obj.CGRectValue.origin)
+        if needsToMoveFrom(obj.cgRectValue.origin) {
+            move(obj.cgRectValue.origin)
         }
     }
     
@@ -468,12 +468,12 @@ extension PopupController: UIGestureRecognizerDelegate {
     }
 }
 
-extension UIViewController {
-    func popupController() -> PopupController? {
-        var parent = parent
-        while !(parent is PopupController || parent == nil) {
-            parent = parent!.parent
-        }
-        return parent as? PopupController
-    }
-}
+//extension UIViewController {
+//    func popupController() -> PopupController? {
+//        var parent = parent
+//        while !(parent is PopupController || parent == nil) {
+//            parent = parent!.parent
+//        }
+//        return parent as? PopupController
+//    }
+//}
