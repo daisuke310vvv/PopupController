@@ -66,5 +66,32 @@ class ViewController: UIViewController {
         
         popup.show(container)
     }
+
+    @IBAction func didTapButton4(sender: AnyObject) {
+        let popup = PopupController
+            .create(self)
+            .customize(
+                [
+                    .Layout(.Top),
+                    .Animation(.SlideDown),
+                    .Scrollable(false),
+                    .DismissWhenTaps(false),
+                    .BackgroundStyle(.BlackFilter(alpha: 0))
+                ]
+            )
+            .didShowHandler { popup in
+                print("showed popup!")
+            }
+            .didCloseHandler { _ in
+                print("closed popup!")
+            }
+
+        let container = DemoPopupViewController4.instance()
+        container.closeHandler = { _ in
+            popup.dismiss()
+        }
+
+        popup.show(container)
+    }
 }
 

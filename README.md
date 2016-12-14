@@ -10,12 +10,14 @@
 <img src="https://github.com/daisuke310vvv/PopupController/blob/master/screenshots/ss01.jpg" width="250px" />
 <img src="https://github.com/daisuke310vvv/PopupController/blob/master/screenshots/ss02.jpg" width="250px" />
 <img src="https://github.com/daisuke310vvv/PopupController/blob/master/screenshots/ss03.jpg" width="250px" />
+<img src="https://github.com/daisuke310vvv/PopupController/blob/master/screenshots/ss04.png" width="250px" />
 </p>
   
 ## Demo
 Try *PopupController* on [Appetize.io](https://appetize.io/app/k498jv54rud8erd7dgnv83kgmr?device=iphone5s&scale=75&orientation=portrait&osVersion=9.2)  
   
 <img src="https://github.com/daisuke310vvv/PopupController/blob/master/screenshots/ss.gif" width="250px" />
+<img src="https://github.com/daisuke310vvv/PopupController/blob/master/screenshots/demo4.gif" width="250px" />
 
 ## Installation
 ### CocoaPods
@@ -45,7 +47,7 @@ class AnyPopupViewController: UIViewController, PopupContentViewController {
 	}
 }
 ```
-  
+
 Then, show popup  
 
 ```swift
@@ -53,16 +55,16 @@ PopupController
     .create(self)
     .show(AnyPopupViewController())
 ```  
-  
+
 With some custom.  
-  
+
 ```swift
 PopupController
     .create(self)
     .customize(
         [
-            .Animation(.FadeIn), 
-            .Layout(.Top), 
+            .Animation(.FadeIn),
+            .Layout(.Top),
             .BackgroundStyle(.BlackFilter(alpha: 0.7))
         ]
     )
@@ -76,7 +78,7 @@ PopupController
     .create(self)
     .customize(
         [
-            .Scrollable(false), 
+            .Scrollable(false),
             .DismissWhenTaps(true)
         ]
     )
@@ -109,9 +111,9 @@ let popup = PopupController
 popup.show() // show popup
 popup.dismiss() // dismiss popup
 ```  
-  
+
 ## Customization  
-  
+
 ```swift
 public enum PopupCustomOption {
     case Layout(PopupController.PopupLayout)

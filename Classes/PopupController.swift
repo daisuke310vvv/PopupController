@@ -46,7 +46,7 @@ public class PopupController: UIViewController {
     }
     
     public enum PopupAnimation {
-        case FadeIn, SlideUp
+        case FadeIn, SlideUp, SlideDown
     }
     
     public enum PopupBackgroundStyle {
@@ -320,9 +320,13 @@ private extension PopupController {
             slideUp(layout, completion: { () -> Void in
                 completion()
             })
+        case .SlideDown:
+            slideDown(layout, completion: { () -> Void in
+                completion()
+            })
         }
     }
-    
+
     func hide(animation: PopupAnimation, completion: PopupAnimateCompletion) {
         guard let child = childViewControllers.last as? PopupContentViewController else {
             return
@@ -342,8 +346,13 @@ private extension PopupController {
                 self.clean()
                 completion()
             })
+        case .SlideDown:
+            self.slideDown({ () -> Void in
+                self.clean()
+                completion()
+            })
         }
-        
+
     }
     
     func needsToMoveFrom(origin: CGPoint) -> Bool {
@@ -416,7 +425,24 @@ private extension PopupController {
                 completion()
         })
     }
-    
+
+    func slideDown(layout: PopupLayout, completion: () -> Void) {
+        view.hidden = false
+        baseScrollView.backgroundColor = UIColor.clearColor()
+        baseScrollView.contentInset.top = layout.origin(popupView).y
+        baseScrollView.contentOffset.y = self.popupView.frame.size.height
+
+        UIView.animateWithDuration(
+            0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: .CurveLinear, animations: { () -> Void in
+
+                self.updateBackgroundStyle(self.backgroundStyle)
+                self.baseScrollView.contentOffset.y = -layout.origin(self.popupView).y
+                self.defaultContentOffset = self.baseScrollView.contentOffset
+        }, completion: { (isFinished) -> Void in
+            completion()
+        })
+    }
+
     func fadeOut(completion: () -> Void) {
         
         UIView.animateWithDuration(
@@ -436,6 +462,16 @@ private extension PopupController {
             self.baseScrollView.alpha = 0.0
             }, completion: { (isFinished) -> Void in
                 completion()
+        })
+    }
+
+    func slideDown(completion: () -> Void) {
+
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: .CurveLinear, animations: { () -> Void in
+            self.popupView.frame.origin.y -= self.popupView.frame.size.height
+            self.baseScrollView.alpha = 0.0
+        }, completion: { (isFinished) -> Void in
+            completion()
         })
     }
 }
