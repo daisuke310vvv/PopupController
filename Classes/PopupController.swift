@@ -46,7 +46,7 @@ open class PopupController: UIViewController {
     }
     
     public enum PopupAnimation {
-        case fadeIn, slideUp
+        case fadeIn, slideUp, slideDown
     }
     
     public enum PopupBackgroundStyle {
@@ -320,6 +320,10 @@ private extension PopupController {
             slideUp(layout, completion: { () -> Void in
                 completion()
             })
+        case .slideDown:
+            slideDown(layout, completion: { () -> Void in
+                completion()
+            })
         }
     }
     
@@ -342,8 +346,12 @@ private extension PopupController {
                 self.clean()
                 completion()
             })
+        case .slideDown:
+            self.slideDown({ () -> Void in
+                self.clean()
+                completion()
+            })
         }
-        
     }
     
     func needsToMoveFrom(_ origin: CGPoint) -> Bool {
@@ -416,6 +424,23 @@ private extension PopupController {
                 completion()
         })
     }
+
+    func slideDown(_ layout: PopupLayout, completion: @escaping () -> Void) {
+        view.isHidden = false
+        baseScrollView.backgroundColor = UIColor.clear
+        baseScrollView.contentInset.top = layout.origin(popupView).y
+        baseScrollView.contentOffset.y = self.popupView.frame.size.height
+
+        UIView.animate(
+            withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: .curveLinear, animations: { () -> Void in
+
+                self.updateBackgroundStyle(self.backgroundStyle)
+                self.baseScrollView.contentOffset.y = -layout.origin(self.popupView).y
+                self.defaultContentOffset = self.baseScrollView.contentOffset
+        }, completion: { (isFinished) -> Void in
+            completion()
+        })
+    }
     
     func fadeOut(_ completion: @escaping () -> Void) {
         
@@ -436,6 +461,16 @@ private extension PopupController {
             self.baseScrollView.alpha = 0.0
             }, completion: { (isFinished) -> Void in
                 completion()
+        })
+    }
+
+    func slideDown(_ completion: @escaping () -> Void) {
+
+        UIView.animate(withDuration: 0.5, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0.0, options: .curveLinear, animations: { () -> Void in
+            self.popupView.frame.origin.y -= self.popupView.frame.size.height
+            self.baseScrollView.alpha = 0.0
+        }, completion: { (isFinished) -> Void in
+            completion()
         })
     }
 }
