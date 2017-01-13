@@ -138,7 +138,8 @@ public extension PopupController {
         customOptions(options)
         return self
     }
-    
+
+    @discardableResult
     public func show(_ childViewController: UIViewController) -> PopupController {
         self.addChildViewController(childViewController)
         popupView = childViewController.view
@@ -307,7 +308,7 @@ private extension PopupController {
         guard let childViewController = childViewControllers.last as? PopupContentViewController else {
             return
         }
-        
+
         popupView.frame.size = childViewController.sizeForPopup(self, size: maximumSize, showingKeyboard: isShowingKeyboard)
         popupView.frame.origin.x = layout.origin(popupView!).x
         
