@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070595441E27B5730001EC00 /* DemoPopupViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070595431E27B5730001EC00 /* DemoPopupViewController4.swift */; };
+		070595461E27B57D0001EC00 /* DemoPopupViewController4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070595451E27B57D0001EC00 /* DemoPopupViewController4.storyboard */; };
 		9D468A051C63601D00AF56C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A041C63601D00AF56C7 /* AppDelegate.swift */; };
 		9D468A071C63601D00AF56C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D468A061C63601D00AF56C7 /* ViewController.swift */; };
 		9D468A0A1C63601D00AF56C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D468A081C63601D00AF56C7 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		070595431E27B5730001EC00 /* DemoPopupViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoPopupViewController4.swift; sourceTree = "<group>"; };
+		070595451E27B57D0001EC00 /* DemoPopupViewController4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DemoPopupViewController4.storyboard; sourceTree = "<group>"; };
 		9D468A011C63601D00AF56C7 /* PopupController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PopupController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D468A041C63601D00AF56C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D468A061C63601D00AF56C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				9D468A411C638D8B00AF56C7 /* DemoPopupViewController2.storyboard */,
 				9D61E90F1C69CC6200E74610 /* DemoPopupViewController3.swift */,
 				9D61E9111C69CC7300E74610 /* DemoPopupViewController3.storyboard */,
+				070595431E27B5730001EC00 /* DemoPopupViewController4.swift */,
+				070595451E27B57D0001EC00 /* DemoPopupViewController4.storyboard */,
 			);
 			name = DemoViewControllers;
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 				9D468A371C63772800AF56C7 /* DemoPopupViewController.storyboard in Resources */,
 				9D468A0C1C63601D00AF56C7 /* Assets.xcassets in Resources */,
 				9D468A421C638D8B00AF56C7 /* DemoPopupViewController2.storyboard in Resources */,
+				070595461E27B57D0001EC00 /* DemoPopupViewController4.storyboard in Resources */,
 				9D468A0A1C63601D00AF56C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,6 +250,7 @@
 				9D468A401C638D7D00AF56C7 /* DemoPopupViewController2.swift in Sources */,
 				9D468A351C63667900AF56C7 /* DemoPopupViewController.swift in Sources */,
 				9D468A071C63601D00AF56C7 /* ViewController.swift in Sources */,
+				070595441E27B5730001EC00 /* DemoPopupViewController4.swift in Sources */,
 				9D468A3C1C63871B00AF56C7 /* DemoPopupViewController1.swift in Sources */,
 				9D468A051C63601D00AF56C7 /* AppDelegate.swift in Sources */,
 			);
