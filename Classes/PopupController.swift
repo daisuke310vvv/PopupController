@@ -264,8 +264,10 @@ private extension PopupController {
     }
     
     @objc func popupControllerWillShowKeyboard(_ notification: Notification) {
-        isShowingKeyboard = true
-        let obj = (notification as NSNotification).userInfo?[UIKeyboardFrameEndUserInfoKey] as! NSValue
+        self.isShowingKeyboard = true
+        guard let obj = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
+            return
+        }
         
         if needsToMoveFrom(obj.cgRectValue.origin) {
             move(obj.cgRectValue.origin)
