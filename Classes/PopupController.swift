@@ -147,7 +147,7 @@ public extension PopupController {
         
         childViewController.didMove(toParentViewController: self)
         
-        show(layout, animation: animation) { _ in
+        show(layout, animation: animation) {
             self.defaultContentOffset = self.baseScrollView.contentOffset
             self.showedHandler?(self)
         }
@@ -284,11 +284,11 @@ private extension PopupController {
     
     // Tap Gesture
     @objc func didTapGesture(_ sender: UITapGestureRecognizer) {
-        self.closePopup { _ in }
+        self.closePopup(nil)
     }
     
     func closePopup(_ completion: (() -> Void)?) {
-        hide(animation) { _ in
+        hide(animation) {
             completion?()
             self.didClosePopup()
         }
@@ -494,7 +494,7 @@ extension PopupController: UIScrollViewDelegate {
         if delta > 50 {
             baseScrollView.contentInset.top = -scrollView.contentOffset.y
             animation = .slideUp
-            self.closePopup { _ in }
+            self.closePopup(nil)
         }
     }
     
