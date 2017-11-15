@@ -124,4 +124,4 @@ public enum PopupCustomOption {
 ```
 
 ## License
-PopupController is available under the MIT lincense. See the LINCENSE file for more info.
+PopupController is available under the MIT license. See the LICENSE file for more info.
