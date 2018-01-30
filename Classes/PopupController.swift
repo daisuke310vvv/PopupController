@@ -41,7 +41,7 @@ open class PopupController: UIViewController {
             case .top: return CGPoint(x: (size.width - view.frame.width) / 2, y: 0)
             case .center: return CGPoint(x: (size.width - view.frame.width) / 2, y: (size.height - view.frame.height) / 2)
             case .bottom: return CGPoint(x: (size.width - view.frame.width) / 2, y: size.height - view.frame.height)
-            case .twitterSharePopupCenter(keyBoardHeight): return CGPoint(x: (size.width - view.frame.width) / 2, y: view.center.y + (view.frame.height - keyBoardHeight) / 2)
+            case .twitterSharePopupCenter(let keyBoardHeight): return CGPoint(x: (size.width - view.frame.width) / 2, y: view.center.y + (view.frame.height - keyBoardHeight) / 2)
             }
         }
     }
