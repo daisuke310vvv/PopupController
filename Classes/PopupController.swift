@@ -34,13 +34,14 @@ public protocol PopupContentViewController {
 open class PopupController: UIViewController {
     
     public enum PopupLayout {
-        case top, center, bottom
+        case top, center, bottom, twitterSharePopupCenter
         
         func origin(_ view: UIView, size: CGSize = UIScreen.main.bounds.size) -> CGPoint {
             switch self {
             case .top: return CGPoint(x: (size.width - view.frame.width) / 2, y: 0)
             case .center: return CGPoint(x: (size.width - view.frame.width) / 2, y: (size.height - view.frame.height) / 2)
             case .bottom: return CGPoint(x: (size.width - view.frame.width) / 2, y: size.height - view.frame.height)
+            case .twitterSharePopupCenter: return CGPoint(x: (size.width - view.frame.width) / 2, y: size.height - view.frame.height)
             }
         }
     }
