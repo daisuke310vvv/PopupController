@@ -38,17 +38,17 @@ class DemoPopupViewController3: UIViewController {
         container3.view.frame = UIScreen.main.bounds
         container3.view.frame.origin.x = UIScreen.main.bounds.width * 2
         
-        self.addChildViewController(container1)
+        self.addChild(container1)
         scrollView.addSubview(container1.view)
-        container1.didMove(toParentViewController: self)
+        container1.didMove(toParent: self)
         
-        self.addChildViewController(container2)
+        self.addChild(container2)
         scrollView.addSubview(container2.view)
-        container2.didMove(toParentViewController: self)
+        container2.didMove(toParent: self)
         
-        self.addChildViewController(container3)
+        self.addChild(container3)
         scrollView.addSubview(container3.view)
-        container3.didMove(toParentViewController: self)
+        container3.didMove(toParent: self)
         
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width * 3, height: UIScreen.main.bounds.height)
         
