@@ -284,7 +284,7 @@ private extension PopupController {
     
     // Tap Gesture
     @objc func didTapGesture(_ sender: UITapGestureRecognizer) {
-        self.closePopup(nil)
+        self.closePopup{}
     }
     
     func closePopup(_ completion: (() -> Void)?) {
