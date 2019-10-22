@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1df-me-pb8">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1df-me-pb8">
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,35 +12,44 @@
         <scene sceneID="cq5-Fe-zs5">
             <objects>
                 <viewController id="1df-me-pb8" customClass="DemoPopupViewController4" customModule="PopupController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lMK-4d-K2O"/>
-                        <viewControllerLayoutGuide type="bottom" id="AkN-i4-2PF"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kaV-JA-K7o">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92M-9s-nAS">
-                                <rect key="frame" x="16" y="17" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="92M-9s-nAS">
+                                <rect key="frame" x="16" y="24" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="92M-9s-nAS" secondAttribute="height" multiplier="1:1" id="EuG-Do-Y9Z"/>
+                                    <constraint firstAttribute="width" constant="32" id="mrP-Zv-LVU"/>
+                                </constraints>
                                 <state key="normal" title="x"/>
                                 <connections>
-                                    <action selector="tapped" destination="1df-me-pb8" eventType="touchUpInside" id="9Fl-a9-jlI"/>
+                                    <action selector="closeTapped" destination="1df-me-pb8" eventType="touchUpInside" id="ZMS-yN-AxY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="slide down :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ou-jd-rNI">
-                                <rect key="frame" x="73" y="21" width="286" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="slide down :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ou-jd-rNI">
+                                <rect key="frame" x="73" y="28" width="286" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="YbO-KY-BbB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="92M-9s-nAS" firstAttribute="centerY" secondItem="06p-3x-ub1" secondAttribute="centerY" id="BHF-dU-yNT"/>
+                            <constraint firstItem="92M-9s-nAS" firstAttribute="leading" secondItem="06p-3x-ub1" secondAttribute="leading" constant="16" id="W3K-FN-dlC"/>
+                            <constraint firstItem="06p-3x-ub1" firstAttribute="trailing" secondItem="7Ou-jd-rNI" secondAttribute="trailing" constant="16" id="kxk-7Q-vzj"/>
+                            <constraint firstItem="7Ou-jd-rNI" firstAttribute="centerY" secondItem="06p-3x-ub1" secondAttribute="centerY" id="sSR-bk-WSC"/>
+                            <constraint firstItem="7Ou-jd-rNI" firstAttribute="leading" secondItem="92M-9s-nAS" secondAttribute="trailing" constant="25" id="xFr-gO-5Cb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="06p-3x-ub1"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="64"/>
+                    <size key="freeformSize" width="375" height="80"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="poG-DL-UkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

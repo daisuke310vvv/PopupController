@@ -19,16 +19,20 @@ class DemoPopupViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
+
     class func instance() -> DemoPopupViewController {
         let storyboard = UIStoryboard(name: "DemoPopupViewController", bundle: nil)
-        return storyboard.instantiateInitialViewController() as! DemoPopupViewController
+        if let popupVC = storyboard.instantiateInitialViewController() as? DemoPopupViewController {
+            return popupVC
+        } else {
+            fatalError("Unable to get storyboard")
+        }
     }
 
 }
 
 extension DemoPopupViewController: PopupContentViewController {
     func sizeForPopup(_ popupController: PopupController, size: CGSize, showingKeyboard: Bool) -> CGSize {
-        return CGSize(width: 300,height: 400)
+        return CGSize(width: 300, height: 400)
     }
 }

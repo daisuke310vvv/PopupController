@@ -14,7 +14,11 @@ final class DemoPopupViewController4: UIViewController {
 
     class func instance() -> DemoPopupViewController4 {
         let storyboard = UIStoryboard(name: "DemoPopupViewController4", bundle: nil)
-        return storyboard.instantiateInitialViewController() as! DemoPopupViewController4
+        if let popupVC = storyboard.instantiateInitialViewController() as? DemoPopupViewController4 {
+            return popupVC
+        } else {
+            fatalError("Unable to get storyboard")
+        }
     }
 
     // MARK: - Life Cycle
@@ -28,7 +32,7 @@ final class DemoPopupViewController4: UIViewController {
     }
 
     // MARK: - Button Action
-    @IBAction func tapped() {
+    @IBAction func closeTapped() {
         closeHandler?()
     }
 }
@@ -36,6 +40,7 @@ final class DemoPopupViewController4: UIViewController {
 extension DemoPopupViewController4: PopupContentViewController {
 
     func sizeForPopup(_ popupController: PopupController, size: CGSize, showingKeyboard: Bool) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 64)
+        return CGSize(width: UIScreen.main.bounds.width, height: 80)
     }
+
 }

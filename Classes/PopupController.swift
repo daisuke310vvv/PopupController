@@ -123,7 +123,7 @@ open class PopupController: UIViewController {
 public extension PopupController {
     
     // MARK: Classes
-    public class func create(_ parentViewController: UIViewController) -> PopupController {
+    class func create(_ parentViewController: UIViewController) -> PopupController {
         let controller = PopupController()
         controller.defaultConfigure()
         
@@ -133,14 +133,13 @@ public extension PopupController {
         
         return controller
     }
-    
-    public func customize(_ options: [PopupCustomOption]) -> PopupController {
+    func customize(_ options: [PopupCustomOption]) -> PopupController {
         customOptions(options)
         return self
     }
 
     @discardableResult
-    public func show(_ childViewController: UIViewController) -> PopupController {
+    func show(_ childViewController: UIViewController) -> PopupController {
         self.addChild(childViewController)
         popupView = childViewController.view
         configure()
@@ -155,17 +154,17 @@ public extension PopupController {
         return self
     }
     
-    public func didShowHandler(_ handler: @escaping (PopupController) -> Void) -> PopupController {
+    func didShowHandler(_ handler: @escaping (PopupController) -> Void) -> PopupController {
         self.showedHandler = handler
         return self
     }
     
-    public func didCloseHandler(_ handler: @escaping (PopupController) -> Void) -> PopupController {
+    func didCloseHandler(_ handler: @escaping (PopupController) -> Void) -> PopupController {
         self.closedHandler = handler
         return self
     }
     
-    public func dismiss(_ completion: (() -> Void)? = nil) {
+    func dismiss(_ completion: (() -> Void)? = nil) {
         if isShowingKeyboard {
             popupView.endEditing(true)
         }

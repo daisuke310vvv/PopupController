@@ -12,15 +12,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
     }
-    
+
     @IBAction func didTapButton(_ sender: AnyObject) {
         PopupController
             .create(self)
             .show(DemoPopupViewController1.instance())
     }
-    
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+    }
+
     @IBAction func didTapButton2(_ sender: AnyObject) {
         PopupController
             .create(self)
@@ -31,7 +34,7 @@ class ViewController: UIViewController {
                     .backgroundStyle(.blackFilter(alpha: 0.7))
                 ]
             )
-            .didShowHandler { popup in
+            .didShowHandler { _ in
                 print("showed popup!")
             }
             .didCloseHandler { _ in
@@ -39,7 +42,7 @@ class ViewController: UIViewController {
             }
             .show(DemoPopupViewController2.instance())
     }
-    
+
     @IBAction func didTapButton3(_ sender: AnyObject) {
         let popup = PopupController
             .create(self)
@@ -52,19 +55,19 @@ class ViewController: UIViewController {
                     .scrollable(true)
                 ]
             )
-            .didShowHandler { popup in
+            .didShowHandler { _ in
                 print("showed popup!")
             }
-            .didCloseHandler { popup in
+            .didCloseHandler { _ in
                 print("closed popup!")
         }
-        
+
         let container = DemoPopupViewController3.instance()
 
         container.closeHandler = {
             popup.dismiss()
         }
-        
+
         popup.show(container)
     }
 
@@ -80,7 +83,7 @@ class ViewController: UIViewController {
                     .backgroundStyle(.blackFilter(alpha: 0))
                 ]
             )
-            .didShowHandler { popup in
+            .didShowHandler { _ in
                 print("showed popup!")
             }
             .didCloseHandler { _ in
@@ -95,4 +98,3 @@ class ViewController: UIViewController {
         popup.show(container)
     }
 }
-
