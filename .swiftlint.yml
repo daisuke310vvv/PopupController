@@ -1,0 +1,100 @@
+# https://github.com/realm/SwiftLint/blob/master/Rules.md
+# https://github.com/realm/SwiftLint
+
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit)
+
+disabled_rules:
+    - cyclomatic_complexity
+    - line_length
+    - missing_docs
+    - multiple_closures_with_trailing_closure
+    - nesting
+    # - shorthand_operator
+    # - statement_position
+    - todo
+    - type_body_length
+    - unused_closure_parameter
+    - valid_docs
+    - function_parameter_count
+
+force_cast: warning
+
+force_try:
+  severity: warning
+
+unused_closure_parameter: warning
+
+excluded:
+    - Carthage
+    - Pods
+
+identifier_name:
+    allowed_symbols: "_"
+    min_length: 1
+    max_length:
+        warning: 50
+        error: 100
+    excluded: # excluded via string array
+        - _code
+
+large_tuple:
+    warning: 4
+    error: 5
+
+colon:
+    severity: error
+    comma: error
+    empty_count: error
+    legacy_constant: error
+    legacy_constructor: error
+    opening_brace: error
+    trailing_newline: error
+    trailing_semicolon: error
+
+opt_in_rules:
+    # - empty_count
+
+function_body_length:
+        warning: 225
+        error: 300
+
+file_length:
+        warning: 500
+        error: 750
+
+custom_rules:
+        force_https: # From https://github.com/Twigz/Game
+            name: "Force HTTPS over HTTP"
+            regex: "((?i)http(?!s))"
+            match_kinds: string
+            message: "HTTPS should be favored over HTTP"
+            severity: warning
+
+        double_space: # From https://github.com/IBM-Swift/Package-Builder
+            include: "*.swift"
+            name: "Double space"
+            regex: '([a-z,A-Z] \s+)'
+            message: "Double space between keywords"
+            match_kinds: keyword
+            severity: error
+
+        # multi_clause_guard:
+        #     regex: 'guard [\h\S]*,'
+
+        explicit_failure_calls:
+            name: “Avoid asserting ‘false’”
+            regex: ‘((assert|precondition)\(false)’
+            message: “Use assertionFailure() or preconditionFailure() instead.”
+            severity: warning
+
+        # comments_capitalized_find_possible_code:
+        #     name: "Catch Commented Out Code"
+        #     regex: "(^ *// +(?!swiftlint)[a-z]+)"
+        #     message: "The first word of a comment should be capitalized"
+        #     severity: warning
+
+        unnecessary_type:
+            name: "Unnecessary Type"
+            regex: '[ a-zA-Z0-9]*(?:let|var) [ a-zA-Z0-9]*: ([a-zA-Z0-9]*)[\? ]*= \1'
+            message: "Type Definition Not Needed"
+            severity: warning

@@ -9,7 +9,7 @@
 import UIKit
 
 class DemoPopupViewController1: UIViewController, PopupContentViewController {
-    
+
     var closeHandler: (() -> Void)?
 
     @IBOutlet weak var button: UIButton! {
@@ -18,10 +18,10 @@ class DemoPopupViewController1: UIViewController, PopupContentViewController {
             button.layer.borderWidth = 1.5
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.frame.size = CGSize(width: 300,height: 300)
+        self.view.frame.size = CGSize(width: 300, height: 300)
 
         // Do any additional setup after loading the view.
     }
@@ -30,17 +30,21 @@ class DemoPopupViewController1: UIViewController, PopupContentViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     class func instance() -> DemoPopupViewController1 {
         let storyboard = UIStoryboard(name: "DemoPopupViewController1", bundle: nil)
-        return storyboard.instantiateInitialViewController() as! DemoPopupViewController1
+        if let popupVC = storyboard.instantiateInitialViewController() as? DemoPopupViewController1 {
+            return popupVC
+        } else {
+            fatalError("Unable to get storyboard")
+        }
     }
-    
+
     func sizeForPopup(_ popupController: PopupController, size: CGSize, showingKeyboard: Bool) -> CGSize {
-        return CGSize(width: 300,height: 300)
+        return CGSize(width: 300, height: 300)
     }
-    
-    @IBAction func didTapCloseButton(_ sender: AnyObject) {
+
+    @IBAction func tappedCloseButton(_ sender: AnyObject) {
         closeHandler?()
     }
 
