@@ -9,6 +9,7 @@
 import UIKit
 
 public enum PopupCustomOption {
+    case cornerRadius(CGFloat)
     case layout(PopupController.PopupLayout)
     case animation(PopupController.PopupAnimation)
     case backgroundStyle(PopupController.PopupBackgroundStyle)
@@ -80,6 +81,7 @@ open class PopupController: UIViewController {
     fileprivate var layout: PopupLayout = .center
     fileprivate var animation: PopupAnimation = .fadeIn
     
+    fileprivate var cornerRadius: CGFloat = 2.0
     fileprivate let margin: CGFloat = 16
     fileprivate let baseScrollView = UIScrollView()
     fileprivate var isShowingKeyboard: Bool = false
@@ -188,7 +190,7 @@ private extension PopupController {
         baseScrollView.frame = view.frame
         view.addSubview(baseScrollView)
         
-        popupView.layer.cornerRadius = 2
+        popupView.layer.cornerRadius = self.cornerRadius
         popupView.layer.masksToBounds = true
         popupView.frame.origin.y = 0
         
@@ -208,6 +210,8 @@ private extension PopupController {
     func customOptions(_ options: [PopupCustomOption]) {
         for option in options {
             switch option {
+            case .cornerRadius(let radius):
+                self.cornerRadius = radius
             case .layout(let layout):
                 self.layout = layout
             case .animation(let animation):
